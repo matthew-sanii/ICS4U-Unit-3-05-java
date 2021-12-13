@@ -24,14 +24,21 @@ final class Car {
     final Scanner userInput = new Scanner(System.in);
     System.out.println("Input the color of the vehicle: ");
     final String carColor = userInput.nextLine();
-    try {
-      System.out.println("Input the plate number: ");
-      final int carPlate = userInput.nextInt();
-      newStack.push(input);
-    } catch (InputMismatchException errorCode) {
-      System.out.println(errorCode);
-      System.exit(0);
+    System.out.println("Input the plate number: ");
+    final String carPlate = userInput.nextLine();
+    Vehicle car1 = new Vehicle(carColor, carPlate, 2);
+    Vehicle car2 = new Vehicle();
+    System.out.println("Speed of both cars is 0.");
+    System.out.println(car1.Accelerate());
+    for (int accel = 0; accel < 11; accel++) {
+      System.out.println(car2.Accelerate());
     }
+    System.out.println(car1.Brake());
+    System.out.println(car2.Brake());
+    String value1 = car1.Value();
+    String value2 = car2.Value();
+    System.out.println(value1);
+    System.out.println(value2);
+    System.out.println("\nDone.");
   }
-
 }

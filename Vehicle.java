@@ -1,8 +1,10 @@
 public class Vehicle {
 
-  private int plateNumber = 0;
+  private String plateNumber = "0";
 
   private String carColor = "";
+
+  private int carNum = 0;
 
   private static int doorAmount = 4;
 
@@ -10,27 +12,33 @@ public class Vehicle {
 
   private static int maxSpeed = 100;
 
-  public Vehicle(String plateNum, String color) {
-    carColor = color;
-    plateNumber = plateNum;
-  }
-
   public Vehicle() {
     carColor = "red";
     plateNumber = "12E4S6";
+    carNum = 1;
   }
 
-  public int Accelerate() {
+  public Vehicle(String color, String plate, int num) {
+    plateNumber = plate;
+    carColor = color;
+    carNum = num;
+  }
+
+  public String Accelerate() {
     speed += 10;
-    if (speed >= maxSpeed) {
-      return -1;
+    if (speed > maxSpeed) {
+      return "Car speed cannot be higher than 100km/h";
     } else {
-      return speed;
+      return "Car speed for car " + String.valueOf(carNum) + " is now " + String.valueOf(speed);
     }
   }
 
-  public void Brake() {
+  public String Brake() {
     speed = 0;
-    System.out.print("Speed is now 0.");
+    return "Speed of car " + String.valueOf(carNum) + " is " + String.valueOf(speed) + " after braking.";
+  }
+
+  public String Value() {
+    return "For car " + String.valueOf(carNum) + ", car color is " + carColor + " and the plate number is " + plateNumber;
   }
 }
