@@ -43,13 +43,12 @@ final class Car {
       } else {
         Vehicle car1 = new Vehicle(carColor, carPlate, 2);
         Vehicle car2 = new Vehicle();
-        System.out.println("Speed of both cars is 0.");
-        System.out.println(car1.accelerate());
+        System.out.println("Speed of car is 0.");
         for (int accel = 0; accel < times; accel++) {
-          System.out.println(car2.accelerate());
+          System.out.println("Speed of car after accelerating is "
+          + car1.accelerate());
         }
-        System.out.println(car1.brake());
-        System.out.println(car2.brake());
+        System.out.println("Speed of car after braking is " + car1.brake());
         String value1 = car1.value();
         String value2 = car2.value();
         System.out.println(value1);

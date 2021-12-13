@@ -63,13 +63,12 @@ public class Vehicle {
   *
   * @return car speed after accelerating.
   */
-  public String accelerate() {
+  public int accelerate() {
     speed += speedChange;
     if (speed > maxSpeed) {
-      return "Car speed cannot be higher than 100km/h";
+      return -1;
     } else {
-      return "Car speed for car " + String.valueOf(carNum)
-      + " is now " + String.valueOf(speed);
+      return speed;
     }
   }
 
@@ -78,10 +77,9 @@ public class Vehicle {
   *
   * @return car speed after braking.
   */
-  public String brake() {
+  public int brake() {
     speed = 0;
-    return "Speed of car " + String.valueOf(carNum)
-    + " is " + String.valueOf(speed) + " after braking.";
+    return speed;
   }
 
   /**
