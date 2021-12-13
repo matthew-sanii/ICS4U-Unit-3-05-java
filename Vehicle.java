@@ -60,6 +60,8 @@ public class Vehicle {
 
   /**
   * The Accelerate method.
+  *
+  * @return car speed after accelerating.
   */
   public String accelerate() {
     speed += speedChange;
@@ -73,6 +75,8 @@ public class Vehicle {
 
   /**
   * The Brake method.
+  *
+  * @return car speed after braking.
   */
   public String brake() {
     speed = 0;
@@ -82,6 +86,8 @@ public class Vehicle {
 
   /**
   * The value method.
+  *
+  * @return the color, plate number, and which car it is.
   */
   public String value() {
     return "For car " + String.valueOf(carNum) + ", car color is "
