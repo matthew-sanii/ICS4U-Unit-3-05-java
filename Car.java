@@ -1,12 +1,11 @@
 import java.util.Scanner;
-import java.util.InputMismatchException;
 
 final class Car {
 
   /**
   * The int used to show what happens when speed is over 100.
   */
-  private final int times = 11;
+  private static int times = 11;
 
   /**
   * Prevent instantiation
@@ -29,13 +28,17 @@ final class Car {
     final Scanner userInput = new Scanner(System.in);
     System.out.println("Input the color of the vehicle: ");
     final String carColor = userInput.nextLine();
+    if (carColor.length() == 0) {
+      System.out.println("Can't input empty string.");
+      System.exit(0);
+    }
     try {
       final int checker = Integer.valueOf(carColor);
-    } catch (InputMismatchException errorCode) {
+    } catch (NumberFormatException errorCode) {
       System.out.println("Input the plate number: ");
       final String carPlate = userInput.nextLine();
-      if (carPlate.length == 0 || carColor.length == 0) {
-        System.out.print("Can't input empty string for either input.");
+      if (carPlate.length() == 0) {
+        System.out.println("Can't input empty string.");
         System.exit(0);
       } else {
         Vehicle car1 = new Vehicle(carColor, carPlate, 2);

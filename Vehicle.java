@@ -31,6 +31,11 @@ public class Vehicle {
   private final int maxSpeed = 100;
 
   /**
+  * The value used for the change in speed during accelerate method.
+  */
+  private final int speedChange = 10;
+
+  /**
   * The no arguments given vehicle constructor.
   */
   public Vehicle() {
@@ -57,7 +62,7 @@ public class Vehicle {
   * The Accelerate method.
   */
   public String accelerate() {
-    speed += 10;
+    speed += speedChange;
     if (speed > maxSpeed) {
       return "Car speed cannot be higher than 100km/h";
     } else {
