@@ -5,7 +5,7 @@ final class Car {
   /**
   * The int used to show what happens when speed is over 100.
   */
-  private static int times = 11;
+  private final int times = 11;
 
   /**
   * Prevent instantiation
