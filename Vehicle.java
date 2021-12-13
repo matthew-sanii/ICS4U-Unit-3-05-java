@@ -4,6 +4,7 @@ public class Vehicle {
   * The placeholder for the plate number.
   */
   private String plateNumber;
+
   /**
   * The placeholder for the car's color.
   */
@@ -30,7 +31,7 @@ public class Vehicle {
   private int maxSpeed = 100;
 
   /**
-  *
+  * The no arguments given vehicle constructor.
   */
   public Vehicle() {
     carColor = "red";
@@ -40,6 +41,11 @@ public class Vehicle {
 
   /**
   * The Vehicle constructor.
+  *
+  * @param color the parameter used for the car color.
+  * @param plate the parameter used for the car plate.
+  * @param num the parameter used for the car number
+  (how many cars are there).
   */
   public Vehicle(final String color, final String plate, final int num) {
     plateNumber = plate;
@@ -50,7 +56,7 @@ public class Vehicle {
   /**
   * The Accelerate method.
   */
-  public String Accelerate() {
+  public String accelerate() {
     speed += 10;
     if (speed > maxSpeed) {
       return "Car speed cannot be higher than 100km/h";
@@ -63,7 +69,7 @@ public class Vehicle {
   /**
   * The Brake method.
   */
-  public String Brake() {
+  public String brake() {
     speed = 0;
     return "Speed of car " + String.valueOf(carNum)
     + " is " + String.valueOf(speed) + " after braking.";
@@ -72,7 +78,7 @@ public class Vehicle {
   /**
   * The value method.
   */
-  public String Value() {
+  public String value() {
     return "For car " + String.valueOf(carNum) + ", car color is "
     + carColor + " and the plate number is " + plateNumber;
   }

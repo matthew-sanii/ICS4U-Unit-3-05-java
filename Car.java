@@ -3,7 +3,10 @@ import java.util.InputMismatchException;
 
 final class Car {
 
-  public int times = 11;
+  /**
+  * The int used to show what happens when speed is over 100.
+  */
+  private int times = 11;
 
   /**
   * Prevent instantiation
@@ -34,14 +37,14 @@ final class Car {
       Vehicle car1 = new Vehicle(carColor, carPlate, 2);
       Vehicle car2 = new Vehicle();
       System.out.println("Speed of both cars is 0.");
-      System.out.println(car1.Accelerate());
+      System.out.println(car1.accelerate());
       for (int accel = 0; accel < times; accel++) {
-        System.out.println(car2.Accelerate());
+        System.out.println(car2.accelerate());
       }
-      System.out.println(car1.Brake());
-      System.out.println(car2.Brake());
-      String value1 = car1.Value();
-      String value2 = car2.Value();
+      System.out.println(car1.brake());
+      System.out.println(car2.brake());
+      String value1 = car1.value();
+      String value2 = car2.value();
       System.out.println(value1);
       System.out.println(value2);
       System.out.println("\nDone.");
