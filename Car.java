@@ -6,7 +6,7 @@ final class Car {
   /**
   * The int used to show what happens when speed is over 100.
   */
-  private int times = 11;
+  private final int times = 11;
 
   /**
   * Prevent instantiation
@@ -34,21 +34,26 @@ final class Car {
     } catch (InputMismatchException errorCode) {
       System.out.println("Input the plate number: ");
       final String carPlate = userInput.nextLine();
-      Vehicle car1 = new Vehicle(carColor, carPlate, 2);
-      Vehicle car2 = new Vehicle();
-      System.out.println("Speed of both cars is 0.");
-      System.out.println(car1.accelerate());
-      for (int accel = 0; accel < times; accel++) {
-        System.out.println(car2.accelerate());
+      if (carPlate.length == 0 || carColor.length == 0) {
+        System.out.print("Can't input empty string for either input.");
+        System.exit(0);
+      } else {
+        Vehicle car1 = new Vehicle(carColor, carPlate, 2);
+        Vehicle car2 = new Vehicle();
+        System.out.println("Speed of both cars is 0.");
+        System.out.println(car1.accelerate());
+        for (int accel = 0; accel < times; accel++) {
+          System.out.println(car2.accelerate());
+        }
+        System.out.println(car1.brake());
+        System.out.println(car2.brake());
+        String value1 = car1.value();
+        String value2 = car2.value();
+        System.out.println(value1);
+        System.out.println(value2);
+        System.out.println("\nDone.");
+        System.exit(0);
       }
-      System.out.println(car1.brake());
-      System.out.println(car2.brake());
-      String value1 = car1.value();
-      String value2 = car2.value();
-      System.out.println(value1);
-      System.out.println(value2);
-      System.out.println("\nDone.");
-      System.exit(0);
     }
     System.out.println("Car color must be a string.");
     System.exit(0);

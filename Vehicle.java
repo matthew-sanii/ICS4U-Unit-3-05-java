@@ -18,7 +18,7 @@ public class Vehicle {
   /**
   * The amount of doors the car has.
   */
-  private int doorAmount = 4;
+  private final int doorAmount = 4;
 
   /**
   * The starting speed of the car.
@@ -28,7 +28,7 @@ public class Vehicle {
   /**
   * The max speed of the car.
   */
-  private int maxSpeed = 100;
+  private final int maxSpeed = 100;
 
   /**
   * The no arguments given vehicle constructor.
